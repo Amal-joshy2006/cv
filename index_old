@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amal Joshy - Terminal Portfolio</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body & Terminal background */
+  body {
+    background: #0d0d0d;
+    color: #12f34f;
+    font-family: 'SF Mono', 'Consolas', 'Menlo', 'Monaco', monospace, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  /* MacBook terminal container */
+  .terminal-window {
+    background: #111;
+    border-radius: 12px;
+    width: 90vw;
+    max-width: 900px;
+    box-shadow:
+      0 0 15px rgba(18, 243, 79, 0.5),
+      inset 0 0 30px #0a720f;
+    overflow: hidden;
+  }
+
+  /* Top bar with controls */
+  .terminal-top-bar {
+    background: #222;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 8px;
+  }
+  .control-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .close-btn {
+    background: #ff605c;
+  }
+  .minimize-btn {
+    background: #ffbd44;
+  }
+  .maximize-btn {
+    background: #00ca56;
+  }
+
+  /* Terminal content area */
+  .terminal-content {
+    padding: 1.5rem 2rem;
+    line-height: 1.4;
+    user-select: none;
+  }
+
+  /* Headings styled as terminal commands output */
+  h1, h2, h3, h4 {
+    color: #12f34f;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  /* Text prompts with green arrow */
+  .prompt {
+    color: #12f34f;
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  /* Blinking cursor */
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    animation: blink 1.2s infinite;
+    background-color: #12f34f;
+    margin-left: 2px;
+  }
+  @keyframes blink {
+    0%, 50% {opacity: 1;}
+    51%, 100% {opacity: 0;}
+  }
+
+  /* Link style - bright green */
+  a {
+    color: #75f875;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Subtle line separators */
+  hr {
+    border: 0;
+    border-top: 1px solid #154615;
+    margin: 2rem 0 1rem 0;
+  }
+
+  /* Lists style */
+  ul {
+    list-style-type: none;
+    padding-left: 1.25rem;
+  }
+  ul li::before {
+    content: '› ';
+    color: #12f34f;
+  }
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+</style>
+</head>
+<body>
+  <div class="terminal-window" role="main" aria-label="Portfolio Terminal">
+    <div class="terminal-top-bar" aria-hidden="true">
+      <div class="terminal-controls">
+        <span class="control-btn close-btn"></span>
+        <span class="control-btn minimize-btn"></span>
+        <span class="control-btn maximize-btn"></span>
+      </div>
+    </div>
+    <div class="terminal-content">
+      <div>
+        <span class="prompt">$</span> whoami<br/>
+        <strong>Amal Joshy</strong> <span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <div>
+        <span class="prompt">$</span> cat profile.txt<br/>
+        Undergraduate Mathematics student at St. Joseph’s College, Devagiri (Autonomous), Kerala, India.<br/>
+        Passionate about Python, web development, and learning.<span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <div>
+        <span class="prompt">$</span> email<br/>
+        <a href="mailto:amaljoshy2205@gmail.com">amaljoshy2205@gmail.com</a><span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <div>
+        <span class="prompt">$</span> github<br/>
+        <a href="https://github.com/amaljoshy-2006" target="_blank" rel="noopener noreferrer">github.com/amaljoshy-2006</a><span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <h2>Experience</h2>
+      <div>
+        <strong>Developer - Company B</strong> <em>(Jun 2018 — Dec 2020)</em><br/>
+        Short bullets describing responsibilities and impact.<span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <h2>Education</h2>
+      <div>
+        <strong>B.Sc. in Mathematics</strong><br/>
+        University of Calicut — 2025<br/>
+        Relevant coursework: Mathematics, Web Development, Algorithms, Java, Python<span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+      </ul>
+
+      <hr/>
+
+      <h2>Projects</h2>
+      <div>
+        <strong>Project One</strong><br/>
+        Personal site - <a href="https://github.com/amaljoshy-2006/cv" target="_blank" rel="noopener noreferrer">github.com/amaljoshy-2006/cv</a><br/>
+        Tech: HTML, CSS, Bootstrap<span class="cursor"></span>
+      </div>
+
+      <hr/>
+
+      <h2>Availability</h2>
+      <p>Open to full-time roles, contract work, and remote collaboration.<span class="cursor"></span></p>
+
+      <hr/>
+
+      <h2>Languages</h2>
+      <p>Malayalam — Native / Professional | English — Conversational<span class="cursor"></span></p>
+
+      <hr/>
+
+      <div style="text-align: right; font-size: 0.75rem; color: #134813;">
+        Last updated: September 13, 2025
+      </div>
+    </div>
+  </div>
+</body>
+</html>

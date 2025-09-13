@@ -1,64 +1,212 @@
-      :root {
-        --accent: #0d6efd;
-      }
-      body {
-        background: #f8f9fa;
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial;
-        transition: background 0.3s, color 0.3s;
-      }
-      .card-profile {
-        border-radius: 1rem;
-        overflow: hidden;
-      }
-      .profile-cover {
-        height: 140px;
-        background: linear-gradient(135deg, var(--accent), #6610f2);
-      }
-      .avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid #fff;
-        transform: translateY(-40px);
-      }
-      .skill-badge {
-        font-size: 0.85rem;
-      }
-      .section-title {
-        font-weight: 600;
-        color: #343a40;
-      }
-      .muted {
-        color: #6c757d;
-      }
-      .download-btn {
-        background: linear-gradient(90deg, var(--accent), #6610f2);
-        border: none;
-      }
-      .spinner-border {
-        display: none;
-      }
-      @media (max-width: 767px) {
-        .profile-cover {
-          height: 100px;
-        }
-        .avatar {
-          width: 96px;
-          height: 96px;
-          transform: translateY(-32px);
-        }
-      }
-      body.dark-mode {
-        background: #212529;
-        color: #f8f9fa;
-      }
-      body.dark-mode .card,
-      body.dark-mode .border {
-        background: #2c2f33;
-        color: #f8f9fa;
-      }
-      body.dark-mode .muted {
-        color: #adb5bd;
-      }
+/* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  /* Themes */
+  :root {
+    --bg-light: #f5f7fa;
+    --bg-dark: #121212;
+    --text-light: #1a1a1a;
+    --text-dark: #12f34f;
+    --text-light-accent: #0867c2;
+    --text-dark-accent: #75f875;
+    --cursor-light: #0867c2;
+    --cursor-dark: #12f34f;
+    --terminal-bg-light: #fff;
+    --terminal-bg-dark: #111;
+    --topbar-bg-light: #eee;
+    --topbar-bg-dark: #222;
+    --control-close-light: #ff605c;
+    --control-minimize-light: #ffbd44;
+    --control-maximize-light: #00ca56;
+    --control-close-dark: #ff605c;
+    --control-minimize-dark: #ffbd44;
+    --control-maximize-dark: #00ca56;
+  }
+
+  /* Body base in light theme */
+  body {
+    font-family: 'SF Mono', 'Consolas', 'Menlo', monospace, monospace;
+    background: var(--bg-light);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: background 0.3s, color 0.3s;
+  }
+ 
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  /* MacBook style terminal window */
+  .terminal-window {
+    width: 90vw;
+    max-width: 900px;
+    background: var(--terminal-bg-light);
+    border-radius: 14px;
+    box-shadow:
+      0 8px 25px rgba(0,0,0,0.25),
+      inset 0 0 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    transition: background 0.3s;
+  }
+
+  body.dark .terminal-window {
+    background: var(--terminal-bg-dark);
+    box-shadow:
+      0 8px 25px rgba(18,243,79,0.5),
+      inset 0 0 40px #0a720f;
+  }
+
+  /* Terminal top bar with round controls */
+  .terminal-top-bar {
+    height: 38px;
+    background: var(--topbar-bg-light);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s;
+  }
+
+  body.dark .terminal-top-bar {
+    background: var(--topbar-bg-dark);
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+  .control-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  .close {
+    background: var(--control-close-light);
+  }
+  .minimize {
+    background: var(--control-minimize-light);
+  }
+  .maximize {
+    background: var(--control-maximize-light);
+  }
+
+  body.dark .close {
+    background: var(--control-close-dark);
+  }
+  body.dark .minimize {
+    background: var(--control-minimize-dark);
+  }
+  body.dark .maximize {
+    background: var(--control-maximize-dark);
+  }
+
+  /* Theme toggle button in top bar */
+  .theme-toggle {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 1.2rem;
+    user-select: none;
+    color: var(--text-light-accent);
+    transition: color 0.3s;
+  }
+  body.dark .theme-toggle {
+    color: var(--text-dark-accent);
+  }
+
+  /* Terminal content area */
+  .terminal-content {
+    padding: 1.5rem 2rem;
+    height: 70vh;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--text-light);
+  }
+  body.dark .terminal-content {
+    color: var(--text-dark);
+  }
+
+  /* Input area */
+  .input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .prompt {
+    color: var(--text-light-accent);
+    font-weight: 700;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  body.dark .prompt {
+    color: var(--text-dark-accent);
+  }
+  #cmdline {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+    caret-color: var(--cursor-light);
+    transition: caret-color 0.3s;
+  }
+  body.dark #cmdline {
+    caret-color: var(--cursor-dark);
+  }
+
+  /* Cursor blinking - use native caret */
+  /* Scrollbar style */
+  .terminal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  .terminal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  body.dark .terminal-content::-webkit-scrollbar-track {
+    background: #222;
+  }
+  .terminal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  .terminal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  body.dark .terminal-content::-webkit-scrollbar-thumb {
+    background: #44bb44;
+  }
+  body.dark .terminal-content::-webkit-scrollbar-thumb:hover {
+    background: #1e7e1e;
+  }
+
+  /* Output text style */
+  .output {
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+  }
+
+  .output a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .output a:hover {
+    color: var(--text-light-accent);
+  }
+  body.dark .output a:hover {
+    color: var(--text-dark-accent);
+  }

@@ -1,195 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amal Joshy</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Amal Joshy</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item">
-              <button class="btn btn-sm btn-outline-secondary ms-2" onclick="toggleDarkMode()">🌙</button>
-            </li>
-          </ul>
-        </div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amal Joshy</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <section class="terminal-window" role="main" aria-label="Interactive terminal portfolio">
+    <header class="terminal-top-bar" aria-hidden="true">
+      <div class="controls" aria-label="Window controls">
+        <span class="control-btn close"></span>
+        <span class="control-btn minimize"></span>
+        <span class="control-btn maximize"></span>
       </div>
-    </nav>
+      <div class="theme-toggle" role="button" aria-pressed="false" aria-label="Toggle light and dark mode" tabindex="0">🌙</div>
+    </header>
+    <section class="terminal-content" id="terminal-content" aria-live="polite" aria-relevant="additions">
+    </section>
 
-    <div class="container py-5 mt-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <!-- Card -->
-          <div class="card card-profile shadow-sm">
-            <div class="profile-cover"></div>
-            <div class="card-body p-4 p-md-5">
-              <div class="row gx-4">
-                <div class="col-md-4 text-center text-md-start">
-                  <img
-                    src="https://avatars.githubusercontent.com/u/232073550?s=400&u=1c4c4af475fc9c69dffc1125c2c9ad53877a723a&v=4"
-                    alt="Avatar"
-                    class="avatar"
-                  />
-                  <h2 class="mt-3 mb-0">Amal Joshy</h2>
-                  <p class="muted mb-1">Student</p>
-                  <div class="mb-3">
-                    <a
-                      href="mailto:amaljoshy2205@gmail.com"
-                      class="btn btn-sm btn-outline-primary me-2"
-                      >Contact</a
-                    >
-                    <a
-                      href="#"
-                      onclick="showSpinner()"
-                      class="btn btn-sm download-btn text-white"
-                      >Download CV</a
-                    >
-                    <div class="spinner-border text-primary ms-2" role="status" id="spinner">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                  </div>
-
-                  <div class="card p-3">
-                    <h6 class="mb-2 section-title">Contact</h6>
-                    <p class="mb-1">
-                      <strong>Email:</strong>
-                      <a href="mailto:amaljoshy2205@gmail.com">amaljoshy2205@gmail.com</a>
-                    </p>
-                    <p class="mb-0">
-                      <strong>Website:</strong> <a href="#">my site</a>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-8 mt-4 mt-md-0" id="profile">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <h5 class="mb-1">Profile</h5>
-                      <p class="muted">
-                        Undergraduate Mathematics student at St. Joseph’s
-                        College, Devagiri (Autonomous), Kerala, India. 💻
-                        Passionate about Python, web development, and learning
-                      </p>
-                    </div>
-                    <div class="text-end">
-                      <p class="mb-0 muted">GitHub: amaljoshy-2006</p>
-                    </div>
-                  </div>
-
-                  <hr />
-
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <h6 class="mb-0">Developer — Company B</h6>
-                        <p class="muted mb-1">Jun 2018 — Dec 2020</p>
-                        <p class="mb-0">
-                          Short bullets describing responsibilities and impact.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <h6 class="section-title">Education</h6>
-                      <div class="mb-3">
-                        <h6 class="mb-0">B.Sc. in Mathematics</h6>
-                        <p class="muted mb-1">University of Calicut — 2025 — </p>
-                        <p class="mb-0">
-                          Relevant coursework: Mathematics, Web Development,
-                          Algorithms, Java, Python
-                        </p>
-                      </div>
-
-                      <h6 class="section-title mt-3">Skills</h6>
-                      <div class="mb-2">
-                        <span class="badge bg-dark border skill-badge me-1">HTML</span>
-                        <span class="badge bg-dark border skill-badge me-1">CSS</span>
-                        <span class="badge bg-dark border skill-badge me-1">Java</span>
-                        <span class="badge bg-dark border skill-badge me-1">JavaScript</span>
-                        <span class="badge bg-dark border skill-badge me-1">Git</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <hr />
-
-                  <h6 class="section-title" id="projects">Projects</h6>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <div class="p-3 border rounded">
-                        <h6 class="mb-1">Project One</h6>
-                        <p class="muted mb-1">
-                          Personal site. Link:
-                          <a href="#">github.com/amaljoshy-2006/cv</a>
-                        </p>
-                        <small class="text-muted">Tech: HTML, CSS, Bootstrap</small>
-                      </div>
-                    </div>
-                  </div>
-
-                  <hr />
-
-                  <div id="contact">
-                    <h6 class="section-title">Availability</h6>
-                    <p class="muted">
-                      Open to full-time roles, contract work, and remote
-                      collaboration.
-                    </p>
-
-                    <h6 class="section-title mt-3">Languages</h6>
-                    <p class="mb-0">
-                      Malayalam — Native / Professional | English — Conversational
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-4 text-center">
-                <small class="text-muted"
-                  >Last updated: September 13, 2025</small
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <footer class="text-center mt-4 p-3 bg-light rounded shadow-sm">
-            <small class="muted">Made 💖 with Bootstrap | &copy; 2025 Amal Joshy</small>
-          </footer>
-        </div>
+    <form id="terminal-form" autocomplete="off" role="form" aria-label="Command line input">
+      <div class="input-line">
+        <span class="prompt" aria-hidden="true">$</span>
+        <input type="text" id="cmdline" name="cmdline" aria-label="Type a command" autocomplete="off" autofocus spellcheck="false" />
       </div>
-    </div>
+    </form>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function showSpinner(){
-        const spinner = document.getElementById('spinner');
-        spinner.style.display = 'inline-block';
-        setTimeout(() => {
-          spinner.style.display = 'none';
-          alert("Not available at this moment, try again later");
-        }, 2000);
+<script>
+  (function(){
+    'use strict';
+
+    // Content
+    const portfolioData = {
+      whoami: 'Amal Joshy',
+      role: 'Student',
+      email: 'amaljoshy2205@gmail.com',
+      github: 'github.com/amaljoshy-2006',
+      profile: `Undergraduate Mathematics student at St. Joseph’s College, Devagiri (Autonomous), Kerala, India.\nPassionate about Python, web development, and learning.`,
+      experience: `null`,
+      education: `B.Sc. in Mathematics\nUniversity of Calicut — 2025\nRelevant coursework: Mathematics, Web Development, Algorithms, Java, Python`,
+      skills: ['HTML', 'CSS', 'Java', 'JavaScript', 'Git'],
+      projects: `Project One\nPersonal site: https://github.com/amaljoshy-2006/cv\nTech: HTML, CSS, Bootstrap`,
+      availability: `Open to full-time roles, contract work, and remote collaboration.`,
+      languages: `Malayalam — Native / Professional | English — Conversational`,
+      help: `Available commands:\nwhoami - Show your name\nemail - Show contact email\ngithub - Show GitHub link\nprofile - Show profile summary\nexperience - Show work experience\neducation - Show education background\nskills - List skills\nprojects - Show projects\navailability - Show availability for work\nlanguages - Show spoken languages\nclear - Clear the terminal`
+    };
+
+ 
+    const terminalContent = document.getElementById('terminal-content');
+    const form = document.getElementById('terminal-form');
+    const input = document.getElementById('cmdline');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    
+    terminalContent.addEventListener('click', () => input.focus());
+
+  
+    function safeText(text){
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+   
+    function formatOutput(cmd, data){
+   
+      if(cmd === 'github') {
+        const url = 'https://' + data;
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${safeText(data)}</a>`;
+      }
+      if(cmd === 'projects') {
+        return safeText(data).replace(/https?:\/\/[^\s]+/g, url => {
+          return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+        });
+      }
+      if(cmd === 'email') {
+        return `<a href="mailto:${safeText(data)}">${safeText(data)}</a>`;
+      }
+      if(cmd === 'skills'){
+        return '<ul>' + data.map(skill => `<li>${safeText(skill)}</li>`).join('') + '</ul>';
+      }
+      if(cmd === 'help') {
+        return safeText(data);
+      }
+    
+      return safeText(data).replace(/\n/g, '<br>');
+    }
+
+    function appendOutput(command, outputData){
+      const cmdDiv = document.createElement('div');
+      cmdDiv.className = 'cmd-line';
+      cmdDiv.innerHTML = `<span class="prompt">$</span> ${safeText(command)}`;
+
+      const outDiv = document.createElement('div');
+      outDiv.className = 'output';
+      outDiv.innerHTML = formatOutput(command, outputData);
+
+      terminalContent.appendChild(cmdDiv);
+      terminalContent.appendChild(outDiv);
+      terminalContent.scrollTop = terminalContent.scrollHeight;
+    }
+
+    
+    function clearTerminal(){
+      terminalContent.innerHTML = '';
+    }
+
+    
+    function handleCommand(cmd){
+      cmd = cmd.toLowerCase().trim();
+
+      if(cmd === '') return;
+
+      if(cmd === 'clear'){
+        clearTerminal();
+        return;
       }
 
-      function toggleDarkMode(){
-        document.body.classList.toggle('dark-mode');
+      if(portfolioData.hasOwnProperty(cmd)){
+        appendOutput(cmd, portfolioData[cmd]);
+      } else {
+        appendOutput(cmd, `Command not found: ${safeText(cmd)}\nType 'help' for list of available commands.`);
       }
-    </script>
-  </body>
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const cmd = input.value.trim();
+      if(cmd){
+        handleCommand(cmd);
+        input.value = '';
+      }
+    });
+
+    // Theme toggle
+    function setTheme(dark){
+      if(dark){
+        body.classList.add('dark');
+        themeToggle.textContent = '☀️';
+        themeToggle.setAttribute('aria-label', 'Toggle light mode');
+        themeToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        body.classList.remove('dark');
+        themeToggle.textContent = '🌙';
+        themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+        themeToggle.setAttribute('aria-pressed', 'false');
+      }
+      input.focus();
+    }
+
+    // Toggle theme on button click or keyboard Enter/Space
+    themeToggle.addEventListener('click', () => {
+      setTheme(!body.classList.contains('dark'));
+    });
+    themeToggle.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        setTheme(!body.classList.contains('dark'));
+      }
+    });
+
+    // Initialize with a welcome message and help prompt
+    function printWelcome(){
+      const welcome = `Welcome to Amal Joshy's Portfolio Terminal.
+Type 'help' to see available commands.`;
+      appendOutput('', welcome);
+    }
+
+    printWelcome();
+
+    input.focus();
+  })();
+</script>
+</body>
 </html>
